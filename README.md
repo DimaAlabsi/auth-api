@@ -37,18 +37,18 @@
 
 ## Heroku applications 
 
-*   [main branch]() 
+*   [main branch](https://dimaalabsiauth-api.herokuapp.com/) 
 *    
 
 ## Github actions
 
-*    [actions]()      
+*    [actions](https://github.com/DimaAlabsi/auth-api/actions)      
 
 
 ## pull request
 
 
-* [last pull request]()
+* [last pull request](https://github.com/DimaAlabsi/auth-api/pull/4)
 
 
 # dependencies 💯
