@@ -6,11 +6,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : process.env.DATABASE_URL;
 
 
-const sequelize = new Sequelize('authlab08', 'dimaalabsi', 'yaubuntu8#', {
-  host: 'localhost',
-  dialect: "postgres"
-});
-// const sequelize = new Sequelize(DATABASE_URL);
+const sequelize = new Sequelize(DATABASE_URL);
 
 const clothesModel = require('./clothes/model');
 const foodModel = require('./food/model.js');
