@@ -3,14 +3,16 @@
 const express = require("express");
 const cors = require('cors');
 const morgan = require('morgan');
-const port = process.env.PORT;
-
+const port = process.env.PORT || 8080;
+require("dotenv").config();
 
 const errorHandler = require('./error-handlers/500.js');
 const notFound = require('./error-handlers/404.js');
-const logger = require('./middleware/logger.js');
-const v1Routes = require('./routes/v1.js');
-const authRoutes = require('./auth/routes.js');
+const logger = require('./auth/middleware/logger');
+const v1Routes = require('./auth/routes/v1');
+const v2Routes= require('./auth/routes/v2')
+const authRoutes = require('./auth/routes/routes');
+const router=require('./auth/models/data-collection')
 
 
 
@@ -20,6 +22,14 @@ const app = express();
 
 app.get('/',(req,res)=>{
     res.status(200).send("Hello world 🤪")
+})
+app.get('/status', (req, res) => {
+
+  res.status(200).send({
+      "status": "running",
+      "port": 8080
+
+  });
 })
 // App Level MW
 app.use(cors());
@@ -33,9 +43,10 @@ app.use(authRoutes);
 
 // Catchalls
 app.use(logger);
-app.use(notFound);
+// app.use(notFound);
 app.use('/api/v1', v1Routes);
-app.use('*', notFoundHandler);
+app.use('/api/v2', v2Routes);
+app.use('*', notFound);
 app.use(errorHandler);
 module.exports = {
   server: app,
