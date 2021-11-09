@@ -51,7 +51,6 @@
 * [last pull request](https://github.com/DimaAlabsi/auth-api/pull/2)
 
 
-
 # dependencies 💯
 
 base-64
