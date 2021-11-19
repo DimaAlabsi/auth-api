@@ -38,7 +38,11 @@
 ## Heroku applications 
 
 *   [main branch](https://dimaalabsiauth-api.herokuapp.com/) 
+<<<<<<< HEAD
 *    
+=======
+*    https://dimaalabsiauth-api.herokuapp.com
+>>>>>>> origin
 
 ## Github actions
 
