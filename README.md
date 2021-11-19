@@ -38,7 +38,11 @@
 ## Heroku applications 
 
 *   [main branch](https://dimaalabsiauth-api.herokuapp.com/) 
+<<<<<<< HEAD
+*    
+=======
 *    https://dimaalabsiauth-api.herokuapp.com
+>>>>>>> origin
 
 ## Github actions
 
@@ -71,3 +75,33 @@ jsonwebtoken
 
 
 ![notes](/img/UML.png)
+
+
+
+class Node{
+  constructor(val){
+    this.val=val;
+    this.next=null
+  }
+
+  const plaindRomeLL=(list)=>{
+
+    let revesefLinkedList= revrse(list);
+    while(list && revesefLinkedList){
+      if (list.value !== revesefLinkedList.value) return false;
+      list=list.next;
+      revesefLinkedList=revesefLinkedList.next;
+    }
+    return true;
+  }
+  function revrse(node){
+    let head= null;
+    while(node){
+      let List2 = new Node(node.value);
+      List2.next=head;
+      head=List2'
+      node=node.next;
+    }
+  }
+  return head;
+}
